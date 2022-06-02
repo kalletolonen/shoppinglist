@@ -4,9 +4,11 @@
 
 <h1>Login</h1>
 <form method=post>{% csrf_token %}
-	{{ form.as_p }}
+	<table>
+		{{ form.as_table }}
+	</table>
+	<br>
 	<input type="submit" value="Login">
 </form>
-<br>
 
 {% endblock content %}

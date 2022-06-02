@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class ShoppingListView(LoginRequiredMixin, ListView): 
     model = models.List
+    ordering = ['-date']
 
 class ShoppingDetailView(LoginRequiredMixin, DetailView): 
     model = models.List

@@ -1,8 +1,11 @@
 {% extends "list/base.html" %}
 
 {% block content %}
+<p><a href="new/"><button>Add new</button></a></p>
+
 	{% for shoppinglist in object_list %}
 		{% if shoppinglist.done != True %}
+			<hr>
 			<p>{{ shoppinglist.date }}</p>
 			<p><b><a href="{{ shoppinglist.get_absolute_url  }}">{{ shoppinglist.shop }}</a></b></p>
 			{% for item in shoppinglist.shop_items_better_list %}
@@ -10,15 +13,23 @@
 			{% endfor %}
 			<p>{{ shoppinglist.shopper|capfirst }}</p>
 			<hr>
-		{% else %}
-			<strike><p>{{ shoppinglist.date }}</p>
+		{% endif %}
+	{% endfor %}
+
+	<h2>Old lists</h2>
+	{% for shoppinglist in object_list %}
+		{% if shoppinglist.done == True %}
+			<hr>
+			<p>{{ shoppinglist.date }}</p>
 			<p><b><a href="{{ shoppinglist.get_absolute_url  }}">{{ shoppinglist.shop }}</a></b></p>
-			<p>{{ shoppinglist.shop_items }}</p>
-			<p>{{ shoppinglist.shopper|capfirst }}</p></strike>
+			<del>
+			{% for item in shoppinglist.shop_items_better_list %}
+				{{ item }}<br>
+			{% endfor %}
+			</del>
+			<p>{{ shoppinglist.shopper|capfirst }}</p>
 			<hr>
 		{% endif %}
-		
 	{% endfor %}
-	<br>
-	<p><a href="new/"><button>Add new</button></a></p>
+	
 {% endblock content %}

@@ -3,7 +3,10 @@
 {% block content %}
 	<h1>Add/Modify a shopping list</h1>
 	<form method=post>{% csrf_token %}
-		{{ form.as_p }}
-		<input type="submit" value="Save">
+		<table>
+			{{ form.as_table }}
+		</table>
+		<input type="submit" id="formbutton" value="Save">
+		<br>
 	</form>
 {% endblock content %}

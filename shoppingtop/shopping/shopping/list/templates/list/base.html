@@ -3,22 +3,52 @@
 
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Shopping list</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>K & K Shopping list</title>
+		<style>
+			body { 
+				background: #F8ECD1;
+				}
+			a {
+				color: #000000;
+			}
+			button {
+				background: #8FBDD3;
+				margin: 2px;
+			}
+			#formbutton {
+				background: #8FBDD3;
+				margin: 2px;
+				text-align: left;
+			}
+			.toolbar {
+				text-align: center;
+			}
+			.container_content {
+				text-align: center;
+			}
+			table {
+				text-align: left;
+			}
+						
+		</style>
 	</head>
 
 	<body>
-		<h1>Shopping list</h1>
-		<p><a href="/shoppinglist">Shopping lists</a> - 
-		{% if user.is_authenticated %}
-			<a href="/logout">Logout <b>{{ user.username }}</b></a> 
-		{% else %}
-			<a href="/accounts/login">Login</a>
-		{% endif %}
-
-		{% block content %}
-			Hello	
-		{% endblock content %}
+		<div class="toolbar">
+		<h1>K & K</h1>
+			<p><a href="/shoppinglist">Shopping lists</a> - 
+			{% if user.is_authenticated %}
+				<a href="/logout">Logout <b>{{ user.username }}</b></a> 
+			{% else %}
+				<a href="/accounts/login">Login</a>
+			{% endif %}
+		</div>
+		<div class="container_content">
+			{% block content %}
+				Hello, this is replaced.
+			{% endblock content %}
+		</div>
 	</body>
 
 </html>
