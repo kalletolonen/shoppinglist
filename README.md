@@ -1,5 +1,3 @@
-Start time 17.30
-
 ## How to create a shopping list app in Django
 
 This is a step by step guide to creating a Shopping list app with users, registrationand admin.
@@ -10,7 +8,7 @@ This is a step by step guide to creating a Shopping list app with users, registr
 * Django 3.2
 * Sudo access
 * A production server
-* Some knowledge in object oriented programming
+* Some knowledge of object oriented programming
 
 ### Install virtualenv & Django
 
