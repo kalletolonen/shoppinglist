@@ -5,7 +5,7 @@
 	<p><b>{{ object.shop }}</b></p>
 	<p>{{ object.shop_items }}</p>
 	<br>
-	<p>{{ object.shopper }}</p>
+	<p>{{ object.shopper|capfirst }}</p>
 	<a href="{{ list.get_absolute_url }}/update">Update</a> - <a href="{{ list.get_absolute_url }}/delete">Delete</a>
 {% endblock content %}
 

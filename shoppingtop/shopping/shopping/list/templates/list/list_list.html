@@ -5,14 +5,16 @@
 		{% if shoppinglist.done != True %}
 			<p>{{ shoppinglist.date }}</p>
 			<p><b><a href="{{ shoppinglist.get_absolute_url  }}">{{ shoppinglist.shop }}</a></b></p>
-			<p>{{ shoppinglist.shop_items }}</p>
-			<p>{{ shoppinglist.shopper }}</p>
+			{% for item in shoppinglist.shop_items_better_list %}
+				{{ item }}<br>
+			{% endfor %}
+			<p>{{ shoppinglist.shopper|capfirst }}</p>
 			<hr>
 		{% else %}
 			<strike><p>{{ shoppinglist.date }}</p>
 			<p><b><a href="{{ shoppinglist.get_absolute_url  }}">{{ shoppinglist.shop }}</a></b></p>
 			<p>{{ shoppinglist.shop_items }}</p>
-			<p>{{ shoppinglist.shopper }}</p></strike>
+			<p>{{ shoppinglist.shopper|capfirst }}</p></strike>
 			<hr>
 		{% endif %}
 		

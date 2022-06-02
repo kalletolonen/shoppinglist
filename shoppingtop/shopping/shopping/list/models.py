@@ -17,3 +17,6 @@ class List(models.Model):
 
     def get_absolute_url(self):
         return f"/shoppinglist/{self.pk}" 
+
+    def shop_items_better_list(self):
+        return self.shop_items.split('\n')
