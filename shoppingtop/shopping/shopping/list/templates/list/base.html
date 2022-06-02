@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Shopping list</title>
+	</head>
+
+	<body>
+		<h1>Shopping list</h1>
+		<p><a href="/shoppinglist">Shopping lists</a> - 
+		{% if user.is_authenticated %}
+			<a href="/logout">Logout <b>{{ user.username }}</b></a> 
+		{% else %}
+			<a href="/accounts/login">Login</a>
+		{% endif %}
+
+		{% block content %}
+			Hello	
+		{% endblock content %}
+	</body>
+
+</html>

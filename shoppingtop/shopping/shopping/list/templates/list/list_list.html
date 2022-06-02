@@ -1,0 +1,22 @@
+{% extends "list/base.html" %}
+
+{% block content %}
+	{% for shoppinglist in object_list %}
+		{% if shoppinglist.done != True %}
+			<p>{{ shoppinglist.date }}</p>
+			<p><b><a href="{{ shoppinglist.get_absolute_url  }}">{{ shoppinglist.shop }}</a></b></p>
+			<p>{{ shoppinglist.shop_items }}</p>
+			<p>{{ shoppinglist.shopper }}</p>
+			<hr>
+		{% else %}
+			<strike><p>{{ shoppinglist.date }}</p>
+			<p><b><a href="{{ shoppinglist.get_absolute_url  }}">{{ shoppinglist.shop }}</a></b></p>
+			<p>{{ shoppinglist.shop_items }}</p>
+			<p>{{ shoppinglist.shopper }}</p></strike>
+			<hr>
+		{% endif %}
+		
+	{% endfor %}
+	<br>
+	<p><a href="new/"><button>Add new</button></a></p>
+{% endblock content %}

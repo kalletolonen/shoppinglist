@@ -1,0 +1,11 @@
+{% extends "list/base.html" %}
+
+{% block content %}
+	<p>{{ object.date }}</p>
+	<p><b>{{ object.shop }}</b></p>
+	<p>{{ object.shop_items }}</p>
+	<br>
+	<p>{{ object.shopper }}</p>
+	<a href="{{ list.get_absolute_url }}/update">Update</a> - <a href="{{ list.get_absolute_url }}/delete">Delete</a>
+{% endblock content %}
+
